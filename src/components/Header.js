@@ -49,6 +49,11 @@ const HeaderLeft = styled.div`
     margin-left: 20px;
     color: hsl(219, 9%, 45%);
   }
+
+  > p:hover {
+    border-bottom: 3px solid hsl(26, 100%, 55%);
+    cursor: pointer;
+  }
 `;
 
 const Image = styled.div`
