@@ -1,4 +1,6 @@
 .app {
+  margin: 0 auto;
   font-family: "Kumbh Sans";
   font-weight: 700;
+  width: 80%;
 }
