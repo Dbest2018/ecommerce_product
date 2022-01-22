@@ -21,7 +21,7 @@ const Header = () => {
       </HeaderLeft>
       <HeaderRight>
         <ShoppingCartIcon />
-        <Avatar src={profilePicture} alt="profile" />
+        <AvatarStyled src={profilePicture} alt="profile" />
       </HeaderRight>
       <HeaderRight></HeaderRight>
     </HeaderContainer>
@@ -62,7 +62,10 @@ const Image = styled.div`
 
 const HeaderRight = styled.div`
   display: flex;
-  width: 100px;
-  justify-content: space-around;
   align-items: center;
+  color: hsl(219, 9%, 45%);
+`;
+
+const AvatarStyled = styled(Avatar)`
+  margin-left: 30px;
 `;

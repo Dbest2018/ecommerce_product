@@ -29,15 +29,18 @@ const ProductItem = () => {
 export default ProductItem;
 
 const ItemContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100%;
 `;
 
 const SelectedItem = styled.div`
   height: 70%;
   width: 100%;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
 
   > img {
     width: 80%;
@@ -48,6 +51,7 @@ const SelectedItem = styled.div`
 
 const Selection = styled.div`
   display: flex;
+  width: 100%;
   justify-content: space-evenly;
   cursor: pointer;
 
