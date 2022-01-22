@@ -36,7 +36,7 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   font-weight: 400;
-  border-bottom: 1px solid hsl(223, 64%, 98%);
+  border-bottom: 2px solid hsl(223, 64%, 98%);
 `;
 
 const HeaderLeft = styled.div`
