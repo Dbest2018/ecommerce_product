@@ -6,7 +6,7 @@ import logo from "../images/logo.svg";
 import profilePicture from "../images/image-avatar.png";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 
-const Header = () => {
+const Header = ({ toggleShowCart }) => {
   return (
     <HeaderContainer>
       <HeaderLeft>
@@ -20,7 +20,7 @@ const Header = () => {
         <p>Contact</p>
       </HeaderLeft>
       <HeaderRight>
-        <CartIcon />
+        <CartIcon onClick={toggleShowCart} />
         <AvatarStyled src={profilePicture} alt="profile" />
       </HeaderRight>
       <HeaderRight></HeaderRight>
