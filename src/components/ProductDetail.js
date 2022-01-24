@@ -2,7 +2,7 @@ import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 import React from "react";
 import styled from "styled-components";
 
-const ProductDetail = () => {
+const ProductDetail = ({ numberOfItem, addItem, subtractItem }) => {
   return (
     <DetailContainer>
       <OrangeText>SNEAKER COMPANY</OrangeText>
@@ -28,9 +28,9 @@ const ProductDetail = () => {
       </PriceContainer>
       <CartContainer>
         <GreyContainer>
-          <Sign>-</Sign>
-          <p>0</p>
-          <Sign>+</Sign>
+          <Sign onClick={subtractItem}>-</Sign>
+          <p>{numberOfItem}</p>
+          <Sign onClick={addItem}>+</Sign>
         </GreyContainer>
         <OrangeContainer>
           <ShoppingCartOutlined />

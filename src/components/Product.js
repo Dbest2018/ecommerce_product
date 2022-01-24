@@ -4,14 +4,18 @@ import styled from "styled-components";
 import ProductItem from "./ProductItem";
 import ProductDetail from "./ProductDetail";
 
-const Product = () => {
+const Product = ({ addItem, subtractItem, numberOfItem }) => {
   return (
     <ProductContainer>
       <ProductLeft>
         <ProductItem />
       </ProductLeft>
       <ProductRight>
-        <ProductDetail />
+        <ProductDetail
+          numberOfItem={numberOfItem}
+          addItem={addItem}
+          subtractItem={subtractItem}
+        />
       </ProductRight>
     </ProductContainer>
   );

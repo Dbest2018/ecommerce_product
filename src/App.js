@@ -8,9 +8,20 @@ import Cart from "./components/Cart";
 
 function App() {
   const [showCart, setShowCart] = useState(true);
+  const [numberOfItem, setNumberOfItem] = useState(0);
 
   function toggleShowCart() {
     setShowCart((prevCart) => !prevCart);
+  }
+
+  function addItem() {
+    setNumberOfItem((prevNumber) => prevNumber + 1);
+  }
+
+  function subtractItem() {
+    if (numberOfItem) {
+      setNumberOfItem((prevNumber) => prevNumber - 1);
+    }
   }
   useEffect(() => {
     WebFont.load({
@@ -18,17 +29,22 @@ function App() {
         families: ["Kumbh Sans:400, 700", "sans-serif"],
       },
     });
-  });
+    setShowCart(false);
+  }, []);
 
   return (
     <div className="app">
       <Header toggleShowCart={toggleShowCart} />
       {showCart && (
         <div className="cart">
-          <Cart />
+          <Cart numberOfItem={numberOfItem} />
         </div>
       )}
-      <Product />
+      <Product
+        numberOfItem={numberOfItem}
+        addItem={addItem}
+        subtractItem={subtractItem}
+      />
     </div>
   );
 }
