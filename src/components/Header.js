@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Avatar from "@mui/material/Avatar";
 
 import logo from "../images/logo.svg";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCartOutlined";
 import profilePicture from "../images/image-avatar.png";
+import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 
 const Header = () => {
   return (
@@ -20,7 +20,7 @@ const Header = () => {
         <p>Contact</p>
       </HeaderLeft>
       <HeaderRight>
-        <ShoppingCartIcon />
+        <CartIcon />
         <AvatarStyled src={profilePicture} alt="profile" />
       </HeaderRight>
       <HeaderRight></HeaderRight>
@@ -63,9 +63,14 @@ const Image = styled.div`
 const HeaderRight = styled.div`
   display: flex;
   align-items: center;
-  color: hsl(219, 9%, 45%);
 `;
 
 const AvatarStyled = styled(Avatar)`
-  margin-left: 30px;
+  cursor: pointer;
+`;
+
+const CartIcon = styled(ShoppingCartOutlined)`
+  margin-right: 30px;
+  color: hsl(219, 9%, 45%);
+  cursor: pointer;
 `;

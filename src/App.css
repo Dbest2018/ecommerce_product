@@ -1,7 +1,14 @@
 .app {
+  position: relative;
   margin: 0 auto;
   font-family: "Kumbh Sans";
   font-weight: 700;
   width: 80%;
   height: 100vh;
+}
+
+.cart {
+  position: absolute;
+  top: 75px;
+  right: 0px;
 }
