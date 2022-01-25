@@ -10,10 +10,10 @@ import imageThreeThumbnail from "../images/image-product-3-thumbnail.jpg";
 import imageFourSelected from "../images/image-product-4.jpg";
 import imageFourThumbnail from "../images/image-product-4-thumbnail.jpg";
 
-const ProductItem = () => {
+const ProductItem = ({ toggleFocus }) => {
   return (
     <ItemContainer>
-      <SelectedItem>
+      <SelectedItem onClick={toggleFocus}>
         <img src={imageOneSelected} alt="selected" />
       </SelectedItem>
       <Selection>
@@ -29,9 +29,6 @@ const ProductItem = () => {
 export default ProductItem;
 
 const ItemContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   height: 100%;
 `;
 
@@ -41,6 +38,7 @@ const SelectedItem = styled.div`
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 
   > img {
     width: 80%;

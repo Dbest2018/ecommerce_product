@@ -4,11 +4,11 @@ import styled from "styled-components";
 import ProductItem from "./ProductItem";
 import ProductDetail from "./ProductDetail";
 
-const Product = ({ addItem, subtractItem, numberOfItem }) => {
+const Product = ({ addItem, subtractItem, numberOfItem, toggleFocus }) => {
   return (
     <ProductContainer>
       <ProductLeft>
-        <ProductItem />
+        <ProductItem toggleFocus={toggleFocus} />
       </ProductLeft>
       <ProductRight>
         <ProductDetail
