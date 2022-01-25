@@ -44,9 +44,13 @@ const HeaderLeft = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin-right: auto;
+  height: 100%;
 
   > p {
     margin-left: 20px;
+    display: flex;
+    height: 100%;
+    align-items: center;
     color: hsl(219, 9%, 45%);
   }
 

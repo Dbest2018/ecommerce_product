@@ -5,7 +5,6 @@ import itemImage from "../images/image-product-1.jpg";
 import deleteIcon from "../images/icon-delete.svg";
 
 const CartItem = ({ numberOfItem, setNumberOfItem }) => {
-  console.log(numberOfItem);
   return (
     <ItemContainer>
       <Item>
