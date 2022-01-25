@@ -4,7 +4,8 @@ import styled from "styled-components";
 import itemImage from "../images/image-product-1.jpg";
 import deleteIcon from "../images/icon-delete.svg";
 
-const CartItem = ({ numberOfItem }) => {
+const CartItem = ({ numberOfItem, setNumberOfItem }) => {
+  console.log(numberOfItem);
   return (
     <ItemContainer>
       <Item>
@@ -15,7 +16,11 @@ const CartItem = ({ numberOfItem }) => {
           Fall Limited Edition Sneakers <br />
           $125.00 x {numberOfItem} <span>${125.0 * numberOfItem} </span>
         </Detail>
-        <DeleteIcon>
+        <DeleteIcon
+          onClick={() => {
+            setNumberOfItem(0);
+          }}
+        >
           <img src={deleteIcon} alt="delete" />
         </DeleteIcon>
       </Item>

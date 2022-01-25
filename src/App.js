@@ -37,7 +37,7 @@ function App() {
       <Header toggleShowCart={toggleShowCart} />
       {showCart && (
         <div className="cart">
-          <Cart numberOfItem={numberOfItem} />
+          <Cart numberOfItem={numberOfItem} setNumberOfItem={setNumberOfItem} />
         </div>
       )}
       <Product

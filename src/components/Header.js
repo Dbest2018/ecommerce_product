@@ -67,6 +67,9 @@ const HeaderRight = styled.div`
 
 const AvatarStyled = styled(Avatar)`
   cursor: pointer;
+  :hover {
+    border: 1px solid hsl(26, 100%, 55%);
+  }
 `;
 
 const CartIcon = styled(ShoppingCartOutlined)`

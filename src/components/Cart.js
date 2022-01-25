@@ -3,13 +3,16 @@ import styled from "styled-components";
 
 import CartItem from "./CartItem";
 
-const Cart = ({ numberOfItem }) => {
+const Cart = ({ numberOfItem, setNumberOfItem }) => {
   return (
     <CartContainer>
       <CartHead>Cart</CartHead>
       <CartBody>
         {numberOfItem ? (
-          <CartItem numberOfItem={numberOfItem} />
+          <CartItem
+            numberOfItem={numberOfItem}
+            setNumberOfItem={setNumberOfItem}
+          />
         ) : (
           <p>Your cart is empty</p>
         )}
