@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import imageOneSelected from "../images/image-product-1.jpg";
@@ -11,16 +11,37 @@ import imageFourSelected from "../images/image-product-4.jpg";
 import imageFourThumbnail from "../images/image-product-4-thumbnail.jpg";
 
 const ProductItem = ({ toggleFocus }) => {
+  const [selectedImage, setSelectedImage] = useState("");
+
+  useEffect(() => {
+    setSelectedImage(imageOneSelected);
+  }, []);
   return (
     <ItemContainer>
       <SelectedItem onClick={toggleFocus}>
-        <img src={imageOneSelected} alt="selected" />
+        <img src={selectedImage} alt="selected" />
       </SelectedItem>
       <Selection>
-        <img src={imageOneThumbnail} alt="selected" />
-        <img src={imageTwoThumbnail} alt="selected" />
-        <img src={imageThreeThumbnail} alt="selected" />
-        <img src={imageFourThumbnail} alt="selected" />
+        <img
+          src={imageOneThumbnail}
+          alt="selected"
+          onClick={() => setSelectedImage(imageOneSelected)}
+        />
+        <img
+          src={imageTwoThumbnail}
+          alt="selected"
+          onClick={() => setSelectedImage(imageTwoSelected)}
+        />
+        <img
+          src={imageThreeThumbnail}
+          alt="selected"
+          onClick={() => setSelectedImage(imageThreeSelected)}
+        />
+        <img
+          src={imageFourThumbnail}
+          alt="selected"
+          onClick={() => setSelectedImage(imageFourSelected)}
+        />
       </Selection>
     </ItemContainer>
   );
