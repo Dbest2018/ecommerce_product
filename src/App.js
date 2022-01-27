@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header toggleShowCart={toggleShowCart} />
+      <Header toggleShowCart={toggleShowCart} numberOfItem={numberOfItem} />
       {showCart && (
         <div className="cart">
           <Cart numberOfItem={numberOfItem} setNumberOfItem={setNumberOfItem} />
