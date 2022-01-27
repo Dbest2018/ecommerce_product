@@ -6,7 +6,7 @@ import logo from "../images/logo.svg";
 import profilePicture from "../images/image-avatar.png";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 
-const Header = ({ toggleShowCart }) => {
+const Header = ({ toggleShowCart, numberOfItem }) => {
   return (
     <HeaderContainer>
       <HeaderLeft>
@@ -20,7 +20,17 @@ const Header = ({ toggleShowCart }) => {
         <p>Contact</p>
       </HeaderLeft>
       <HeaderRight>
-        <CartIcon onClick={toggleShowCart} />
+        {/* <CartIcon onClick={toggleShowCart} /> */}
+        {numberOfItem ? (
+          <CartIcon>
+            <p>{numberOfItem}</p>
+            <ShoppingCartOutlined onClick={toggleShowCart} />
+          </CartIcon>
+        ) : (
+          <CartIcon>
+            <ShoppingCartOutlined onClick={toggleShowCart} />
+          </CartIcon>
+        )}
         <AvatarStyled src={profilePicture} alt="profile" />
       </HeaderRight>
       <HeaderRight></HeaderRight>
@@ -76,8 +86,25 @@ const AvatarStyled = styled(Avatar)`
   }
 `;
 
-const CartIcon = styled(ShoppingCartOutlined)`
+// const CartIcon = styled(ShoppingCartOutlined)`
+//   margin-right: 30px;
+//   color: hsl(219, 9%, 45%);
+//   cursor: pointer;
+// `;
+
+const CartIcon = styled.div`
   margin-right: 30px;
   color: hsl(219, 9%, 45%);
   cursor: pointer;
+
+  > p {
+    margin-left: auto;
+    text-align: center;
+    width: 12px;
+    font-size: 12px;
+    margin-bottom: 0;
+    color: white;
+    border-radius: 50%;
+    background-color: hsl(26, 100%, 55%);
+  }
 `;
